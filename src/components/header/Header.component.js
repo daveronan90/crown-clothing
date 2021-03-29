@@ -8,9 +8,11 @@ import { connect } from "react-redux";
 
 import CartIcon from "../cart-icon/CartIcon.component";
 import CartDropdown from "../cart-dropdown/CartDropdown.component";
-import { toggleCartDropdown } from "../../redux/cart/cart.actions";
+import { selectCurrentUser } from "../../redux/user/user.selectors";
+import { selectShowCart } from "../../redux/cart/cart.selectors";
+import { createStructuredSelector } from "reselect";
 
-const Header = ({ currentUser, showCart, toggleCartDropdown }) => {
+const Header = ({ currentUser, showCart }) => {
   return (
     <div className="header">
       <Link to="/" className="logo-container">
@@ -39,13 +41,9 @@ const Header = ({ currentUser, showCart, toggleCartDropdown }) => {
   );
 };
 
-const mapStateToProps = (state) => ({
-  currentUser: state.user.currentUser,
-  showCart: state.cart.showCart,
+const mapStateToProps = createStructuredSelector({
+  currentUser: selectCurrentUser,
+  showCart: selectShowCart,
 });
 
-const mapDispatchToProps = (dispatch) => ({
-  toggleCartDropdown: () => dispatch(toggleCartDropdown()),
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(Header);
+export default connect(mapStateToProps)(Header);
