@@ -34,8 +34,6 @@
     "workbox-streams": "^5.1.3"
   },
   "scripts": {
-    "heroku-prebuild": "npm install -f",
-    "heroku-postbuild": "npm run prod",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
