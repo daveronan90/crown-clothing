@@ -15,7 +15,7 @@ import { createStructuredSelector } from "reselect";
 const Header = ({ currentUser, showCart }) => {
   return (
     <div className="header">
-      <Link to="/crown-clothing" className="logo-container">
+      <Link to="/" className="logo-container">
         <Logo className="logo" />
       </Link>
       <div className="options">
