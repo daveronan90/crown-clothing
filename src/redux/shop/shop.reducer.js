@@ -1,11 +1,16 @@
-import SHOP_DATE from "../../fixtures/shopData";
+import shopTypes from "./shop.types";
 
 const INITIAL_STATE = {
-  collections: SHOP_DATE,
+  collections: null,
 };
 
 const shopReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
+    case shopTypes.SET_COLLECTIONS:
+      return {
+        ...state,
+        collections: action.collections,
+      };
     default:
       return state;
   }
