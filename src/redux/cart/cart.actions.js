@@ -18,3 +18,7 @@ export const removeItem = (item) => ({
   type: cartTypes.REMOVE_ITEM,
   item,
 });
+
+export const clearCart = () => ({
+  type: cartTypes.CLEAR_CART,
+});

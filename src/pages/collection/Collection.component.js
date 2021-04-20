@@ -11,8 +11,8 @@ export const CollectionPage = ({ match, collection }) => {
     <div className="collection-page">
       <h2 className="title">{title}</h2>
       <div className="items">
-        {items.map((item) => (
-          <CollectionItem item={item} />
+        {items.map((item, index) => (
+          <CollectionItem key={index} item={item} />
         ))}
       </div>
     </div>
